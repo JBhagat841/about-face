@@ -30004,16 +30004,18 @@
 	
 	var _Home2 = _interopRequireDefault(_Home);
 	
+	var _About = __webpack_require__(291);
+	
+	var _About2 = _interopRequireDefault(_About);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	//import CounterRoute from './Counter';
-	
-	// We only need to import the modules necessary for initial render
 	var createRoutes = exports.createRoutes = function createRoutes(store) {
 	  return {
 	    path: '/',
 	    component: _CoreLayout2.default,
-	    indexRoute: _Home2.default
+	    indexRoute: _Home2.default,
+	    childRoutes: [_About2.default]
 	  };
 	};
 	
@@ -30033,6 +30035,7 @@
 	    when the route exists and matches.
 	*/
 	
+	// We only need to import the modules necessary for initial render
 	exports.default = createRoutes;
 
 /***/ },
@@ -30501,6 +30504,8 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _reactRouter = __webpack_require__(214);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var HomeView = exports.HomeView = function HomeView() {
@@ -30510,7 +30515,12 @@
 	    _react2.default.createElement(
 	      'h1',
 	      null,
-	      'A Heads Up! clone'
+	      'Thing: a Heads Up! clone'
+	    ),
+	    _react2.default.createElement(
+	      _reactRouter.Link,
+	      { to: '/about' },
+	      'About'
 	    )
 	  );
 	};
@@ -30699,6 +30709,66 @@
 	  store: _react.PropTypes.object.isRequired
 	};
 	exports.default = AppContainer;
+
+/***/ },
+/* 291 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _AboutView = __webpack_require__(292);
+	
+	var _AboutView2 = _interopRequireDefault(_AboutView);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// Sync route definition
+	exports.default = {
+	  path: 'about',
+	  component: _AboutView2.default
+	};
+
+/***/ },
+/* 292 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.AboutView = undefined;
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRouter = __webpack_require__(214);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var AboutView = exports.AboutView = function AboutView() {
+	  return _react2.default.createElement(
+	    'div',
+	    null,
+	    _react2.default.createElement(
+	      'h1',
+	      null,
+	      'Thing: About'
+	    ),
+	    _react2.default.createElement(
+	      _reactRouter.Link,
+	      { to: '/' },
+	      'Home'
+	    )
+	  );
+	};
+	
+	exports.default = AboutView;
 
 /***/ }
 /******/ ]);
