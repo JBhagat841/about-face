@@ -1,8 +1,10 @@
-var fs = require('fs');
-var path = require('path');
-var rootPath = path.resolve(__dirname);
-var frontendDir = path.join(rootPath, 'frontend');
-var publicDir = path.join(rootPath, 'public');
+const fs = require('fs');
+const path = require('path');
+const webpack = require('webpack');
+
+const rootPath = path.resolve(__dirname);
+const frontendDir = path.join(rootPath, 'frontend');
+const publicDir = path.join(rootPath, 'public');
 
 module.exports = {
   entry: path.join(frontendDir, "entry.js"),
@@ -33,5 +35,13 @@ module.exports = {
         loaders: ["style", "css", "sass?sourceMap"]
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery",
+      "window.Tether": "tether"
+    })
+  ]
 };

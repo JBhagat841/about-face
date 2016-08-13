@@ -1,4 +1,7 @@
-import React from 'react';
+require('expose?$!expose?jQuery!jquery');
+require('expose?Tether!tether');
+require("expose?React!react");
+
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import createBrowserHistory from 'history/lib/createBrowserHistory'
