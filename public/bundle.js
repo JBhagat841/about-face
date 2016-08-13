@@ -30005,38 +30005,26 @@
 	
 	var _Home2 = _interopRequireDefault(_Home);
 	
-	var _NewGame = __webpack_require__(287);
+	var _GameSetup = __webpack_require__(299);
 	
-	var _NewGame2 = _interopRequireDefault(_NewGame);
+	var _GameSetup2 = _interopRequireDefault(_GameSetup);
+	
+	var _Game = __webpack_require__(301);
+	
+	var _Game2 = _interopRequireDefault(_Game);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	// We only need to import the modules necessary for initial render
 	var createRoutes = exports.createRoutes = function createRoutes(store) {
 	  return {
 	    path: '/',
 	    component: _CoreLayout2.default,
 	    indexRoute: _Home2.default,
-	    childRoutes: [_NewGame2.default]
+	    childRoutes: [_GameSetup2.default, _Game2.default]
 	  };
 	};
 	
-	/*  Note: childRoutes can be chunked or otherwise loaded programmatically
-	    using getChildRoutes with the following signature:
-	    getChildRoutes (location, cb) {
-	      require.ensure([], (require) => {
-	        cb(null, [
-	          // Remove imports!
-	          require('./Counter').default(store)
-	        ])
-	      })
-	    }
-	    However, this is not necessary for code-splitting! It simply provides
-	    an API for async route definitions. Your code splitting should occur
-	    inside the route `getComponent` function, since it is only invoked
-	    when the route exists and matches.
-	*/
-	
-	// We only need to import the modules necessary for initial render
 	exports.default = createRoutes;
 
 /***/ },
@@ -30521,66 +30509,8 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
-/* 287 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _NewGameView = __webpack_require__(288);
-	
-	var _NewGameView2 = _interopRequireDefault(_NewGameView);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	// Sync route definition
-	exports.default = {
-	  path: 'new',
-	  component: _NewGameView2.default
-	};
-
-/***/ },
-/* 288 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(React) {"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.NewGameView = undefined;
-	
-	var _reactRouter = __webpack_require__(214);
-	
-	var NewGameView = exports.NewGameView = function NewGameView() {
-	  return React.createElement(
-	    "div",
-	    null,
-	    React.createElement(
-	      "h1",
-	      null,
-	      "New Game - Ready?"
-	    ),
-	    React.createElement(
-	      _reactRouter.Link,
-	      { to: "game", className: "btn btn-primary" },
-	      "Yes"
-	    ),
-	    React.createElement(
-	      _reactRouter.Link,
-	      { to: "/", className: "btn btn-outline-secondary" },
-	      "No"
-	    )
-	  );
-	};
-	
-	exports.default = NewGameView;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ },
+/* 287 */,
+/* 288 */,
 /* 289 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -42669,6 +42599,125 @@
 
 	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["React"] = __webpack_require__(1);
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 299 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _GameSetupView = __webpack_require__(300);
+	
+	var _GameSetupView2 = _interopRequireDefault(_GameSetupView);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// Sync route definition
+	exports.default = {
+	  path: 'new',
+	  component: _GameSetupView2.default
+	};
+
+/***/ },
+/* 300 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React) {"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.GameSetupView = undefined;
+	
+	var _reactRouter = __webpack_require__(214);
+	
+	var GameSetupView = exports.GameSetupView = function GameSetupView() {
+	  return React.createElement(
+	    "div",
+	    null,
+	    React.createElement(
+	      "h1",
+	      null,
+	      "New Game - Ready?"
+	    ),
+	    React.createElement(
+	      _reactRouter.Link,
+	      { to: "game", className: "btn btn-primary" },
+	      "Yes"
+	    ),
+	    React.createElement(
+	      _reactRouter.Link,
+	      { to: "/", className: "btn btn-outline-secondary" },
+	      "No"
+	    )
+	  );
+	};
+	
+	exports.default = GameSetupView;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ },
+/* 301 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _GameView = __webpack_require__(302);
+	
+	var _GameView2 = _interopRequireDefault(_GameView);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// Sync route definition
+	exports.default = {
+	  path: 'game',
+	  component: _GameView2.default
+	};
+
+/***/ },
+/* 302 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React) {"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.GameView = undefined;
+	
+	var _reactRouter = __webpack_require__(214);
+	
+	var GameView = exports.GameView = function GameView() {
+	  return React.createElement(
+	    "div",
+	    null,
+	    React.createElement(
+	      "div",
+	      { className: "card" },
+	      React.createElement("img", { className: "card-img-top", src: "http://images.clipartpanda.com/cards-20clip-20art-playing-card2.png" }),
+	      React.createElement(
+	        "div",
+	        { className: "card-block" },
+	        React.createElement(
+	          "h1",
+	          { className: "card-title" },
+	          "Cards"
+	        )
+	      )
+	    )
+	  );
+	};
+	
+	exports.default = GameView;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }
 /******/ ]);

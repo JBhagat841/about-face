@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 
-export const NewGameView = () => (
+export const GameSetupView = () => (
   <div>
     <h1>New Game - Ready?</h1>
     <Link to="game" className="btn btn-primary">Yes</Link>
@@ -8,4 +8,4 @@ export const NewGameView = () => (
   </div>
 );
 
-export default NewGameView;
+export default GameSetupView;
