@@ -4,9 +4,9 @@ import { Provider } from 'react-redux';
 import createBrowserHistory from 'history/lib/createBrowserHistory'
 import { useRouterHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
-import { createRoutes } from './routes';
-import createStore from './store/createStore';
-import AppContainer from './containers/AppContainer';
+import { createRoutes } from 'routes';
+import createStore from 'store/createStore';
+import AppContainer from 'containers/AppContainer';
 
 // ========================================================
 // Browser History Setup

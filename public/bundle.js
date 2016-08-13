@@ -66,11 +66,11 @@
 	
 	var _routes = __webpack_require__(277);
 	
-	var _createStore = __webpack_require__(285);
+	var _createStore = __webpack_require__(287);
 	
 	var _createStore2 = _interopRequireDefault(_createStore);
 	
-	var _AppContainer = __webpack_require__(288);
+	var _AppContainer = __webpack_require__(290);
 	
 	var _AppContainer2 = _interopRequireDefault(_AppContainer);
 	
@@ -30000,7 +30000,7 @@
 	
 	var _CoreLayout2 = _interopRequireDefault(_CoreLayout);
 	
-	var _Home = __webpack_require__(289);
+	var _Home = __webpack_require__(285);
 	
 	var _Home2 = _interopRequireDefault(_Home);
 	
@@ -30093,8 +30093,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js?sourceMap!./CoreLayout.scss", function() {
-				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js?sourceMap!./CoreLayout.scss");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js?sourceMap!./CoreLayout.scss", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js?sourceMap!./CoreLayout.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -30475,15 +30475,67 @@
 	  value: true
 	});
 	
+	var _HomeView = __webpack_require__(286);
+	
+	var _HomeView2 = _interopRequireDefault(_HomeView);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// Sync route definition
+	exports.default = {
+	  component: _HomeView2.default
+	};
+
+/***/ },
+/* 286 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.HomeView = undefined;
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var HomeView = exports.HomeView = function HomeView() {
+	  return _react2.default.createElement(
+	    'div',
+	    null,
+	    _react2.default.createElement(
+	      'h1',
+	      null,
+	      'A Heads Up! clone'
+	    )
+	  );
+	};
+	
+	exports.default = HomeView;
+
+/***/ },
+/* 287 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
 	var _redux = __webpack_require__(182);
 	
 	var _reactRouterRedux = __webpack_require__(272);
 	
-	var _reduxThunk = __webpack_require__(286);
+	var _reduxThunk = __webpack_require__(288);
 	
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 	
-	var _reducers = __webpack_require__(287);
+	var _reducers = __webpack_require__(289);
 	
 	var _reducers2 = _interopRequireDefault(_reducers);
 	
@@ -30519,7 +30571,7 @@
 	};
 
 /***/ },
-/* 286 */
+/* 288 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -30547,7 +30599,7 @@
 	exports['default'] = thunk;
 
 /***/ },
-/* 287 */
+/* 289 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30581,7 +30633,7 @@
 	exports.default = makeRootReducer;
 
 /***/ },
-/* 288 */
+/* 290 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30647,58 +30699,6 @@
 	  store: _react.PropTypes.object.isRequired
 	};
 	exports.default = AppContainer;
-
-/***/ },
-/* 289 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _HomeView = __webpack_require__(290);
-	
-	var _HomeView2 = _interopRequireDefault(_HomeView);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	// Sync route definition
-	exports.default = {
-	  component: _HomeView2.default
-	};
-
-/***/ },
-/* 290 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.HomeView = undefined;
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var HomeView = exports.HomeView = function HomeView() {
-	  return _react2.default.createElement(
-	    'div',
-	    null,
-	    _react2.default.createElement(
-	      'h1',
-	      null,
-	      'A Heads Up! clone'
-	    )
-	  );
-	};
-	
-	exports.default = HomeView;
 
 /***/ }
 /******/ ]);

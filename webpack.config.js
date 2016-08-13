@@ -1,14 +1,19 @@
 var fs = require('fs');
 var path = require('path');
-var publicDir = path.join(__dirname, 'public');
+var rootPath = path.resolve(__dirname);
+var frontendDir = path.join(rootPath, 'frontend');
+var publicDir = path.join(rootPath, 'public');
 
 module.exports = {
-  entry: "./frontend/scripts/entry.js",
+  entry: path.join(frontendDir, "entry.js"),
   output: {
     path: publicDir,
     filename: "bundle.js"
   },
   devtool: 'source-map',
+  resolve: {
+    root: frontendDir
+  },
   module: {
     loaders: [
       {
