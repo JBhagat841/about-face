@@ -62,19 +62,19 @@
 	
 	var _routes = __webpack_require__(277);
 	
-	var _createStore = __webpack_require__(289);
+	var _createStore = __webpack_require__(291);
 	
 	var _createStore2 = _interopRequireDefault(_createStore);
 	
-	var _AppContainer = __webpack_require__(292);
+	var _AppContainer = __webpack_require__(294);
 	
 	var _AppContainer2 = _interopRequireDefault(_AppContainer);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	__webpack_require__(293);
-	__webpack_require__(296);
+	__webpack_require__(295);
 	__webpack_require__(298);
+	__webpack_require__(300);
 	
 	// ========================================================
 	// Browser History Setup
@@ -30001,27 +30001,24 @@
 	
 	var _CoreLayout2 = _interopRequireDefault(_CoreLayout);
 	
-	var _Home = __webpack_require__(285);
-	
-	var _Home2 = _interopRequireDefault(_Home);
-	
-	var _GameSetup = __webpack_require__(299);
-	
-	var _GameSetup2 = _interopRequireDefault(_GameSetup);
-	
-	var _Game = __webpack_require__(301);
-	
-	var _Game2 = _interopRequireDefault(_Game);
+	var _components = __webpack_require__(286);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// We only need to import the modules necessary for initial render
 	var createRoutes = exports.createRoutes = function createRoutes(store) {
 	  return {
 	    path: '/',
 	    component: _CoreLayout2.default,
-	    indexRoute: _Home2.default,
-	    childRoutes: [_GameSetup2.default, _Game2.default]
+	    indexRoute: {
+	      component: _components.HomeView
+	    },
+	    childRoutes: [{
+	      path: 'new',
+	      component: _components.GameSetupView
+	    }, {
+	      path: 'game',
+	      component: _components.GameView
+	    }]
 	  };
 	};
 	
@@ -30031,6 +30028,20 @@
 /* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _CoreLayout = __webpack_require__(279);
+	
+	exports.default = _CoreLayout.CoreLayout;
+
+/***/ },
+/* 279 */
+/***/ function(module, exports, __webpack_require__) {
+
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
@@ -30038,11 +30049,11 @@
 	});
 	exports.CoreLayout = undefined;
 	
-	var _CoreLayout = __webpack_require__(279);
+	var _CoreLayout = __webpack_require__(280);
 	
 	var _CoreLayout2 = _interopRequireDefault(_CoreLayout);
 	
-	__webpack_require__(283);
+	__webpack_require__(284);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -30067,16 +30078,16 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
-/* 279 */
+/* 280 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(280);
+	var content = __webpack_require__(281);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(282)(content, {});
+	var update = __webpack_require__(283)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -30093,10 +30104,10 @@
 	}
 
 /***/ },
-/* 280 */
+/* 281 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(281)();
+	exports = module.exports = __webpack_require__(282)();
 	// imports
 	
 	
@@ -30107,7 +30118,7 @@
 
 
 /***/ },
-/* 281 */
+/* 282 */
 /***/ function(module, exports) {
 
 	/*
@@ -30163,7 +30174,7 @@
 
 
 /***/ },
-/* 282 */
+/* 283 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -30415,16 +30426,16 @@
 
 
 /***/ },
-/* 283 */
+/* 284 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(284);
+	var content = __webpack_require__(285);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(282)(content, {});
+	var update = __webpack_require__(283)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -30441,10 +30452,10 @@
 	}
 
 /***/ },
-/* 284 */
+/* 285 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(281)();
+	exports = module.exports = __webpack_require__(282)();
 	// imports
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Slabo+27px);", ""]);
 	
@@ -30455,7 +30466,7 @@
 
 
 /***/ },
-/* 285 */
+/* 286 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30464,19 +30475,147 @@
 	  value: true
 	});
 	
-	var _HomeView = __webpack_require__(286);
+	var _AboutView = __webpack_require__(287);
 	
-	var _HomeView2 = _interopRequireDefault(_HomeView);
+	Object.defineProperty(exports, 'AboutView', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_AboutView).default;
+	  }
+	});
+	
+	var _GameSetupView = __webpack_require__(288);
+	
+	Object.defineProperty(exports, 'GameSetupView', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_GameSetupView).default;
+	  }
+	});
+	
+	var _GameView = __webpack_require__(289);
+	
+	Object.defineProperty(exports, 'GameView', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_GameView).default;
+	  }
+	});
+	
+	var _HomeView = __webpack_require__(290);
+	
+	Object.defineProperty(exports, 'HomeView', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_HomeView).default;
+	  }
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ },
+/* 287 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React) {"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.AboutView = undefined;
+	
+	var _reactRouter = __webpack_require__(214);
+	
+	var AboutView = exports.AboutView = function AboutView() {
+	  return React.createElement(
+	    "div",
+	    null,
+	    React.createElement(
+	      "h1",
+	      null,
+	      "Thing: About"
+	    ),
+	    React.createElement(
+	      _reactRouter.Link,
+	      { to: "/" },
+	      "Home"
+	    )
+	  );
+	};
+	
+	exports.default = AboutView;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ },
+/* 288 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React) {"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.GameSetupView = undefined;
+	
+	var _reactRouter = __webpack_require__(214);
+	
+	var GameSetupView = exports.GameSetupView = function GameSetupView() {
+	  return React.createElement(
+	    "div",
+	    null,
+	    React.createElement(
+	      "h1",
+	      null,
+	      "New Game - Ready?"
+	    ),
+	    React.createElement(
+	      _reactRouter.Link,
+	      { to: "game", className: "btn btn-primary" },
+	      "Yes"
+	    ),
+	    React.createElement(
+	      _reactRouter.Link,
+	      { to: "/", className: "btn btn-outline-secondary" },
+	      "No"
+	    )
+	  );
+	};
+	
+	exports.default = GameSetupView;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ },
+/* 289 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.GameView = undefined;
+	
+	var _reactRouter = __webpack_require__(214);
+	
+	var _Card = __webpack_require__(301);
+	
+	var _Card2 = _interopRequireDefault(_Card);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// Sync route definition
-	exports.default = {
-	  component: _HomeView2.default
+	var GameView = exports.GameView = function GameView() {
+	  return React.createElement(
+	    'div',
+	    null,
+	    React.createElement(_Card2.default, { image: 'http://images.clipartpanda.com/cards-20clip-20art-playing-card2.png', title: 'Cards' })
+	  );
 	};
+	
+	exports.default = GameView;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
-/* 286 */
+/* 290 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {"use strict";
@@ -30509,9 +30648,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
-/* 287 */,
-/* 288 */,
-/* 289 */
+/* 291 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30524,11 +30661,11 @@
 	
 	var _reactRouterRedux = __webpack_require__(272);
 	
-	var _reduxThunk = __webpack_require__(290);
+	var _reduxThunk = __webpack_require__(292);
 	
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 	
-	var _reducers = __webpack_require__(291);
+	var _reducers = __webpack_require__(293);
 	
 	var _reducers2 = _interopRequireDefault(_reducers);
 	
@@ -30564,7 +30701,7 @@
 	};
 
 /***/ },
-/* 290 */
+/* 292 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -30592,7 +30729,7 @@
 	exports['default'] = thunk;
 
 /***/ },
-/* 291 */
+/* 293 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30626,7 +30763,7 @@
 	exports.default = makeRootReducer;
 
 /***/ },
-/* 292 */
+/* 294 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30694,21 +30831,21 @@
 	exports.default = AppContainer;
 
 /***/ },
-/* 293 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["$"] = __webpack_require__(294);
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
-
-/***/ },
-/* 294 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["jQuery"] = __webpack_require__(295);
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
-
-/***/ },
 /* 295 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["$"] = __webpack_require__(296);
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 296 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["jQuery"] = __webpack_require__(297);
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 297 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*eslint-disable no-unused-vars*/
@@ -40788,14 +40925,14 @@
 
 
 /***/ },
-/* 296 */
+/* 298 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["Tether"] = __webpack_require__(297);
+	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["Tether"] = __webpack_require__(299);
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 297 */
+/* 299 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! tether 1.3.4 */
@@ -42594,129 +42731,74 @@
 
 
 /***/ },
-/* 298 */
+/* 300 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["React"] = __webpack_require__(1);
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 299 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _GameSetupView = __webpack_require__(300);
-	
-	var _GameSetupView2 = _interopRequireDefault(_GameSetupView);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	// Sync route definition
-	exports.default = {
-	  path: 'new',
-	  component: _GameSetupView2.default
-	};
-
-/***/ },
-/* 300 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(React) {"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.GameSetupView = undefined;
-	
-	var _reactRouter = __webpack_require__(214);
-	
-	var GameSetupView = exports.GameSetupView = function GameSetupView() {
-	  return React.createElement(
-	    "div",
-	    null,
-	    React.createElement(
-	      "h1",
-	      null,
-	      "New Game - Ready?"
-	    ),
-	    React.createElement(
-	      _reactRouter.Link,
-	      { to: "game", className: "btn btn-primary" },
-	      "Yes"
-	    ),
-	    React.createElement(
-	      _reactRouter.Link,
-	      { to: "/", className: "btn btn-outline-secondary" },
-	      "No"
-	    )
-	  );
-	};
-	
-	exports.default = GameSetupView;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ },
 /* 301 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _GameView = __webpack_require__(302);
-	
-	var _GameView2 = _interopRequireDefault(_GameView);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	// Sync route definition
-	exports.default = {
-	  path: 'game',
-	  component: _GameView2.default
-	};
-
-/***/ },
-/* 302 */
-/***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(React) {"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.GameView = undefined;
 	
-	var _reactRouter = __webpack_require__(214);
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var GameView = exports.GameView = function GameView() {
-	  return React.createElement(
-	    "div",
-	    null,
-	    React.createElement(
-	      "div",
-	      { className: "card" },
-	      React.createElement("img", { className: "card-img-top", src: "http://images.clipartpanda.com/cards-20clip-20art-playing-card2.png" }),
-	      React.createElement(
+	var _react = __webpack_require__(1);
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Card = function (_Component) {
+	  _inherits(Card, _Component);
+	
+	  function Card() {
+	    _classCallCheck(this, Card);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Card).apply(this, arguments));
+	  }
+	
+	  _createClass(Card, [{
+	    key: "render",
+	    value: function render() {
+	      var _props = this.props;
+	      var image = _props.image;
+	      var title = _props.title;
+	
+	
+	      return React.createElement(
 	        "div",
-	        { className: "card-block" },
+	        { className: "card" },
+	        React.createElement("img", { width: "200px", className: "card-img-top", src: image }),
 	        React.createElement(
-	          "h1",
-	          { className: "card-title" },
-	          "Cards"
+	          "div",
+	          { className: "card-block" },
+	          React.createElement(
+	            "h1",
+	            { className: "card-title" },
+	            title
+	          )
 	        )
-	      )
-	    )
-	  );
-	};
+	      );
+	    }
+	  }]);
 	
-	exports.default = GameView;
+	  return Card;
+	}(_react.Component);
+	
+	Card.propTypes = {
+	  image: _react.PropTypes.string.isRequired,
+	  title: _react.PropTypes.string.isRequired
+	};
+	exports.default = Card;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }

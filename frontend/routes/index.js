@@ -1,16 +1,21 @@
-// We only need to import the modules necessary for initial render
-import CoreLayout from 'layouts/CoreLayout/CoreLayout';
-import HomeRoute from './Home';
-import GameSetup from './GameSetup';
-import Game from './Game';
+import CoreLayout from 'layouts/CoreLayout';
+import { GameSetupView, GameView, HomeView } from 'components';
 
 export const createRoutes = (store) => ({
   path: '/',
   component: CoreLayout,
-  indexRoute: HomeRoute,
+  indexRoute: {
+    component: HomeView
+  },
   childRoutes: [
-    GameSetup,
-    Game
+    {
+      path: 'new',
+      component: GameSetupView
+    },
+    {
+      path: 'game',
+      component: GameView
+    }
   ]
 });
 

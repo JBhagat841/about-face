@@ -14,9 +14,7 @@ import AppContainer from 'containers/AppContainer';
 // ========================================================
 // Browser History Setup
 // ========================================================
-const browserHistory = useRouterHistory(createBrowserHistory)({});
-//   basename: __BASENAME__
-// })
+const browserHistory = useRouterHistory(createBrowserHistory)();
 
 // ========================================================
 // Store and History Instantiation
