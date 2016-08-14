@@ -1,5 +1,5 @@
 import CoreLayout from 'layouts/CoreLayout';
-import { GameSetupView, GameView, HomeView } from 'components';
+import { GameSetupView, GameView, HomeView, Success, Pass } from 'components';
 
 export const createRoutes = (store) => ({
   path: '/',
@@ -15,6 +15,14 @@ export const createRoutes = (store) => ({
     {
       path: 'game',
       component: GameView
+    },
+    {
+      path: 'success',
+      component: Success
+    },
+    {
+      path: 'pass',
+      component: Pass
     }
   ]
 });
