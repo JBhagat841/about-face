@@ -31119,6 +31119,7 @@
 	  routes: _react.PropTypes.object.isRequired,
 	  store: _react.PropTypes.object.isRequired
 	};
+	
 	exports.default = AppContainer;
 
 /***/ },

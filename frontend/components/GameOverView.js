@@ -15,4 +15,11 @@ class GameOverView extends Component {
   }
 }
 
+const mapStateToProps = (state, ownProps) => {
+  let { helpers: {statusTransitions} } = state;
+  return {
+    statusTransitions
+  }
+};
+
 export default GameOverView;
