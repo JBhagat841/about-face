@@ -1,17 +1,14 @@
 import { combineReducers } from 'redux';
 import { routerReducer as routing } from 'react-router-redux';
+import { completedCards, currentCard, game } from 'reducers'
 
-export const makeRootReducer = (asyncReducers) => {
+export const makeRootReducer = () => {
   return combineReducers({
-    // Add sync reducers here
-    routing,
-    ...asyncReducers
+    currentCard,
+    completedCards,
+    game,
+    routing
   })
-}
-
-export const injectReducer = (store, { key, reducer }) => {
-  store.asyncReducers[key] = reducer
-  store.replaceReducer(makeRootReducer(store.asyncReducers))
 }
 
 export default makeRootReducer;

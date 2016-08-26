@@ -62,19 +62,19 @@
 	
 	var _routes = __webpack_require__(277);
 	
-	var _createStore = __webpack_require__(294);
+	var _createStore = __webpack_require__(297);
 	
 	var _createStore2 = _interopRequireDefault(_createStore);
 	
-	var _AppContainer = __webpack_require__(297);
+	var _AppContainer = __webpack_require__(304);
 	
 	var _AppContainer2 = _interopRequireDefault(_AppContainer);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	__webpack_require__(298);
-	__webpack_require__(301);
-	__webpack_require__(303);
+	__webpack_require__(305);
+	__webpack_require__(308);
+	__webpack_require__(310);
 	
 	// ========================================================
 	// Browser History Setup
@@ -30461,7 +30461,7 @@
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Slabo+27px);", ""]);
 	
 	// module
-	exports.push([module.id, "html {\n  box-sizing: border-box; }\n\nhtml,\nbody {\n  margin: 0;\n  padding: 0;\n  height: 100%; }\n\n*,\n*:before,\n*:after {\n  box-sizing: inherit; }\n\nbody {\n  font-family: 'Slabo 27px', serif;\n  background: #fff; }\n\nh1 {\n  text-align: center;\n  font-size: 4em; }\n", ""]);
+	exports.push([module.id, "html {\n  box-sizing: border-box; }\n\nhtml,\nbody {\n  margin: 0;\n  padding: 0;\n  height: 100%; }\n\n*,\n*:before,\n*:after {\n  box-sizing: inherit; }\n\nbody {\n  font-family: 'Slabo 27px', serif;\n  background: #fff; }\n\nh1 {\n  text-align: center;\n  font-size: 4em; }\n\n.game-card {\n  max-width: 300px; }\n\n.game-card .card-text {\n  text-align: center;\n  font-size: 3em; }\n", ""]);
 	
 	// exports
 
@@ -30503,7 +30503,7 @@
 	  }
 	});
 	
-	var _GameOverView = __webpack_require__(304);
+	var _GameOverView = __webpack_require__(293);
 	
 	Object.defineProperty(exports, 'GameOverView', {
 	  enumerable: true,
@@ -30512,7 +30512,7 @@
 	  }
 	});
 	
-	var _HomeView = __webpack_require__(291);
+	var _HomeView = __webpack_require__(294);
 	
 	Object.defineProperty(exports, 'HomeView', {
 	  enumerable: true,
@@ -30521,7 +30521,7 @@
 	  }
 	});
 	
-	var _Success = __webpack_require__(292);
+	var _Success = __webpack_require__(295);
 	
 	Object.defineProperty(exports, 'Success', {
 	  enumerable: true,
@@ -30530,7 +30530,7 @@
 	  }
 	});
 	
-	var _Pass = __webpack_require__(293);
+	var _Pass = __webpack_require__(296);
 	
 	Object.defineProperty(exports, 'Pass', {
 	  enumerable: true,
@@ -30708,7 +30708,7 @@
 	      return React.createElement(
 	        'div',
 	        null,
-	        React.createElement(_Card2.default, { image: 'http://images.clipartpanda.com/cards-20clip-20art-playing-card2.png', title: 'Cards' }),
+	        React.createElement(_Card2.default, null),
 	        React.createElement(
 	          _reactRouter.Link,
 	          { to: 'done', className: 'btn btn-primary' },
@@ -30721,11 +30721,125 @@
 	  return GameView;
 	}(_react.Component);
 	
+	// <Card image="http://images.clipartpanda.com/cards-20clip-20art-playing-card2.png" title="Cards" />
+	
 	exports.default = GameView;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 290 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _redux = __webpack_require__(182);
+	
+	var _reactRedux = __webpack_require__(175);
+	
+	var _Button = __webpack_require__(291);
+	
+	var _Button2 = _interopRequireDefault(_Button);
+	
+	var _actions = __webpack_require__(292);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Card = function (_Component) {
+	  _inherits(Card, _Component);
+	
+	  function Card() {
+	    _classCallCheck(this, Card);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Card).apply(this, arguments));
+	  }
+	
+	  _createClass(Card, [{
+	    key: 'render',
+	    value: function render() {
+	      var _props = this.props;
+	      var image = _props.image;
+	      var text = _props.text;
+	      var onSuccess = _props.onSuccess;
+	      var onPass = _props.onPass;
+	
+	
+	      return React.createElement(
+	        'div',
+	        { className: 'card game-card' },
+	        React.createElement('img', { width: '100%', className: 'card-img-top', src: image }),
+	        React.createElement(
+	          'div',
+	          { className: 'card-block' },
+	          React.createElement(
+	            'p',
+	            { className: 'card-text' },
+	            text
+	          ),
+	          React.createElement(
+	            _Button2.default,
+	            { onClick: onSuccess },
+	            'Got It'
+	          ),
+	          React.createElement(
+	            _Button2.default,
+	            { onClick: onPass },
+	            'Pass'
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Card;
+	}(_react.Component);
+	
+	Card.propTypes = {
+	  image: _react.PropTypes.string.isRequired,
+	  text: _react.PropTypes.string.isRequired,
+	  onSuccess: _react.PropTypes.func.isRequired,
+	  onPass: _react.PropTypes.func.isRequired
+	};
+	
+	
+	function mapStateToProps(state) {
+	  var _state$currentCard$ca = state.currentCard.card;
+	  var image = _state$currentCard$ca.image;
+	  var text = _state$currentCard$ca.text;
+	
+	
+	  var stateProps = {
+	    image: image,
+	    text: text
+	  };
+	  return stateProps;
+	}
+	
+	var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
+	  return (0, _redux.bindActionCreators)({
+	    onSuccess: _actions.succeedCard,
+	    onPass: _actions.passCard
+	  }, dispatch);
+	};
+	
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Card);
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ },
+/* 291 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {"use strict";
@@ -30744,52 +30858,162 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var Card = function (_Component) {
-	  _inherits(Card, _Component);
+	var Button = function (_Component) {
+	  _inherits(Button, _Component);
 	
-	  function Card() {
-	    _classCallCheck(this, Card);
+	  function Button() {
+	    _classCallCheck(this, Button);
 	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Card).apply(this, arguments));
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Button).apply(this, arguments));
 	  }
 	
-	  _createClass(Card, [{
+	  _createClass(Button, [{
 	    key: "render",
 	    value: function render() {
 	      var _props = this.props;
-	      var image = _props.image;
-	      var title = _props.title;
+	      var children = _props.children;
+	      var _onClick = _props.onClick;
 	
 	
 	      return React.createElement(
-	        "div",
-	        { className: "card" },
-	        React.createElement("img", { width: "200px", className: "card-img-top", src: image }),
+	        "a",
+	        { className: "btn btn-primary", href: "#",
+	          onClick: function onClick(e) {
+	            e.preventDefault();
+	            _onClick();
+	          }
+	        },
+	        children
+	      );
+	    }
+	  }]);
+	
+	  return Button;
+	}(_react.Component);
+	
+	Button.propTypes = {
+	  children: _react.PropTypes.node.isRequired,
+	  onClick: _react.PropTypes.func.isRequired
+	};
+	exports.default = Button;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ },
+/* 292 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var succeedCard = exports.succeedCard = function succeedCard(image, text) {
+	  return {
+	    type: 'COMPLETE_CARD',
+	    image: image,
+	    text: text,
+	    result: 'success'
+	  };
+	};
+	
+	var passCard = exports.passCard = function passCard(image, text) {
+	  return {
+	    type: 'COMPLETE_CARD',
+	    image: image,
+	    text: text,
+	    result: 'pass'
+	  };
+	};
+	
+	var incrementScore = exports.incrementScore = function incrementScore() {
+	  return {
+	    type: 'INCREMENT_SCORE'
+	  };
+	};
+
+/***/ },
+/* 293 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _reactRouter = __webpack_require__(214);
+	
+	var _reactRedux = __webpack_require__(175);
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var GameOverView = function (_Component) {
+	  _inherits(GameOverView, _Component);
+	
+	  function GameOverView() {
+	    _classCallCheck(this, GameOverView);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(GameOverView).apply(this, arguments));
+	  }
+	
+	  _createClass(GameOverView, [{
+	    key: 'render',
+	    value: function render() {
+	      var score = this.props.score;
+	
+	
+	      return React.createElement(
+	        'div',
+	        null,
 	        React.createElement(
-	          "div",
-	          { className: "card-block" },
-	          React.createElement(
-	            "h1",
-	            { className: "card-title" },
-	            title
-	          )
+	          'h1',
+	          null,
+	          'Great Job!'
+	        ),
+	        React.createElement(
+	          'p',
+	          null,
+	          'You got ',
+	          score,
+	          '!'
+	        ),
+	        React.createElement(
+	          _reactRouter.Link,
+	          { to: '/', className: 'btn btn-outline-primary' },
+	          'Start Over'
 	        )
 	      );
 	    }
 	  }]);
 	
-	  return Card;
+	  return GameOverView;
 	}(_react.Component);
 	
-	Card.propTypes = {
-	  image: _react.PropTypes.string.isRequired,
-	  title: _react.PropTypes.string.isRequired
-	};
-	exports.default = Card;
+	function getSucceededCardCount(cards) {
+	  return cards.filter(function (c) {
+	    return c.result == 'success';
+	  }).length;
+	}
+	
+	function mapStateToProps(state) {
+	  return {
+	    score: getSucceededCardCount(state.completedCards)
+	  };
+	}
+	
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, null)(GameOverView);
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
-/* 291 */
+/* 294 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -30847,7 +31071,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
-/* 292 */
+/* 295 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {"use strict";
@@ -30893,7 +31117,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
-/* 293 */
+/* 296 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {"use strict";
@@ -30939,7 +31163,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
-/* 294 */
+/* 297 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30952,11 +31176,11 @@
 	
 	var _reactRouterRedux = __webpack_require__(272);
 	
-	var _reduxThunk = __webpack_require__(295);
+	var _reduxThunk = __webpack_require__(298);
 	
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 	
-	var _reducers = __webpack_require__(296);
+	var _reducers = __webpack_require__(299);
 	
 	var _reducers2 = _interopRequireDefault(_reducers);
 	
@@ -30986,13 +31210,12 @@
 	  // Store Instantiation and HMR Setup
 	  // ======================================================
 	  var store = (0, _redux.createStore)((0, _reducers2.default)(), initialState, _redux.compose.apply(undefined, [_redux.applyMiddleware.apply(undefined, middleware)].concat(enhancers)));
-	  store.asyncReducers = {};
 	
 	  return store;
 	};
 
 /***/ },
-/* 295 */
+/* 298 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -31020,7 +31243,7 @@
 	exports['default'] = thunk;
 
 /***/ },
-/* 296 */
+/* 299 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31028,33 +31251,167 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.injectReducer = exports.makeRootReducer = undefined;
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	exports.makeRootReducer = undefined;
 	
 	var _redux = __webpack_require__(182);
 	
 	var _reactRouterRedux = __webpack_require__(272);
 	
-	var makeRootReducer = exports.makeRootReducer = function makeRootReducer(asyncReducers) {
-	  return (0, _redux.combineReducers)(_extends({
-	    // Add sync reducers here
+	var _reducers = __webpack_require__(300);
+	
+	var makeRootReducer = exports.makeRootReducer = function makeRootReducer() {
+	  return (0, _redux.combineReducers)({
+	    currentCard: _reducers.currentCard,
+	    completedCards: _reducers.completedCards,
+	    game: _reducers.game,
 	    routing: _reactRouterRedux.routerReducer
-	  }, asyncReducers));
-	};
-	
-	var injectReducer = exports.injectReducer = function injectReducer(store, _ref) {
-	  var key = _ref.key;
-	  var reducer = _ref.reducer;
-	
-	  store.asyncReducers[key] = reducer;
-	  store.replaceReducer(makeRootReducer(store.asyncReducers));
+	  });
 	};
 	
 	exports.default = makeRootReducer;
 
 /***/ },
-/* 297 */
+/* 300 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _game = __webpack_require__(301);
+	
+	Object.defineProperty(exports, 'game', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_game).default;
+	  }
+	});
+	
+	var _completedCards = __webpack_require__(302);
+	
+	Object.defineProperty(exports, 'completedCards', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_completedCards).default;
+	  }
+	});
+	
+	var _currentCard = __webpack_require__(303);
+	
+	Object.defineProperty(exports, 'currentCard', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_currentCard).default;
+	  }
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ },
+/* 301 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var initialState = {};
+	
+	var game = function game() {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? initialState : arguments[0];
+	  var action = arguments[1];
+	
+	  return state;
+	};
+	
+	exports.default = game;
+
+/***/ },
+/* 302 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+	
+	var initialState = [];
+	
+	var completedCards = function completedCards() {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? initialState : arguments[0];
+	  var action = arguments[1];
+	
+	  switch (action.type) {
+	    case 'COMPLETE_CARD':
+	      return [].concat(_toConsumableArray(state), [{
+	        image: action.image,
+	        text: action.text,
+	        result: action.result
+	      }]);
+	    case 'RESET_GAME':
+	      return initialState;
+	    default:
+	      return state;
+	  }
+	};
+	
+	exports.default = completedCards;
+
+/***/ },
+/* 303 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var initialState = {
+	  secondsRemaining: 30,
+	  card: {
+	    image: "",
+	    text: "",
+	    result: ""
+	  }
+	};
+	
+	var currentCard = function currentCard() {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? initialState : arguments[0];
+	  var action = arguments[1];
+	
+	  switch (action.type) {
+	    case 'SET_CURRENT_CARD':
+	      return {
+	        secondsRemaining: 30,
+	        card: {
+	          image: action.image,
+	          text: action.text,
+	          result: action.result
+	        }
+	      };
+	    case 'COMPLETE_CARD':
+	      return initialState;
+	    case 'RESET_GAME':
+	      return initialState;
+	    case 'TIMER_TICK':
+	      return Object.assign({}, state, {
+	        secondsRemaining: state.secondsRemaining > 0 ? state.secondsRemaining - 1 : 0
+	      });
+	    default:
+	      return state;
+	  }
+	};
+	
+	exports.default = currentCard;
+
+/***/ },
+/* 304 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31123,21 +31480,21 @@
 	exports.default = AppContainer;
 
 /***/ },
-/* 298 */
+/* 305 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["$"] = __webpack_require__(299);
+	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["$"] = __webpack_require__(306);
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 299 */
+/* 306 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["jQuery"] = __webpack_require__(300);
+	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["jQuery"] = __webpack_require__(307);
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 300 */
+/* 307 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*eslint-disable no-unused-vars*/
@@ -41217,14 +41574,14 @@
 
 
 /***/ },
-/* 301 */
+/* 308 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["Tether"] = __webpack_require__(302);
+	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["Tether"] = __webpack_require__(309);
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 302 */
+/* 309 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! tether 1.3.4 */
@@ -43023,78 +43380,11 @@
 
 
 /***/ },
-/* 303 */
+/* 310 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["React"] = __webpack_require__(1);
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
-
-/***/ },
-/* 304 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(1);
-	
-	var _reactRouter = __webpack_require__(214);
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var GameOverView = function (_Component) {
-	  _inherits(GameOverView, _Component);
-	
-	  function GameOverView() {
-	    _classCallCheck(this, GameOverView);
-	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(GameOverView).apply(this, arguments));
-	  }
-	
-	  _createClass(GameOverView, [{
-	    key: 'render',
-	    value: function render() {
-	      var score = this.props.score;
-	
-	
-	      return React.createElement(
-	        'div',
-	        null,
-	        React.createElement(
-	          'h1',
-	          null,
-	          'Great Job!'
-	        ),
-	        React.createElement(
-	          'p',
-	          null,
-	          'You got ',
-	          score,
-	          '!'
-	        ),
-	        React.createElement(
-	          _reactRouter.Link,
-	          { to: '/', className: 'btn btn-outline-primary' },
-	          'Start Over'
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return GameOverView;
-	}(_react.Component);
-	
-	exports.default = GameOverView;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }
 /******/ ]);

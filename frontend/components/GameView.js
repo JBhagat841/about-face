@@ -6,11 +6,13 @@ class GameView extends Component {
   render () {
     return (
       <div>
-        <Card image="http://images.clipartpanda.com/cards-20clip-20art-playing-card2.png" title="Cards" />
+        <Card />
         <Link to="done" className="btn btn-primary">Done</Link>
       </div>
     )
   }
 }
+
+// <Card image="http://images.clipartpanda.com/cards-20clip-20art-playing-card2.png" title="Cards" />
 
 export default GameView;

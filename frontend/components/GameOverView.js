@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { Link } from 'react-router';
+import { connect } from 'react-redux';
 
 class GameOverView extends Component {
   render () {
@@ -15,11 +16,14 @@ class GameOverView extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  let { helpers: {statusTransitions} } = state;
-  return {
-    statusTransitions
-  }
-};
+function getSucceededCardCount(cards) {
+  return cards.filter(c => c.result == 'success').length;
+}
 
-export default GameOverView;
+function mapStateToProps(state){
+  return {
+    score: getSucceededCardCount(state.completedCards)
+  };
+}
+
+export default connect(mapStateToProps, null)(GameOverView);

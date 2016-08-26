@@ -31,7 +31,6 @@ export default (initialState = {}, history) => {
       ...enhancers
     )
   );
-  store.asyncReducers = {};
 
   return store;
 }
