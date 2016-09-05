@@ -18,8 +18,6 @@ const currentCard = (state = initialState, action) => {
           result: action.result
         }
       };
-    case 'COMPLETE_CARD':
-      return initialState;
     case 'RESET_GAME':
       return initialState;
     case 'TIMER_TICK':

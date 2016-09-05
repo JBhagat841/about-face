@@ -1,49 +1,31 @@
 import { Component, PropTypes } from 'react';
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux';
-
-import Button from './Button';
-import { succeedCard, passCard } from 'actions';
 
 class Card extends Component {
   static propTypes = {
     image: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
-    onSuccess: PropTypes.func.isRequired,
-    onPass: PropTypes.func.isRequired
   };
 
   render () {
-    const { image, text, onSuccess, onPass } = this.props;
+    const { image, text, result, children } = this.props;
+
+    let cardClasses = "card game-card";
+    if (result == 'success') {
+      cardClasses += ' card-outline-success';
+    } else if (result == 'pass') {
+      cardClasses += ' card-outline-danger';
+    }
 
     return (
-      <div className="card game-card">
+      <div className={cardClasses}>
         <img width="100%" className="card-img-top" src={image} />
         <div className="card-block">
           <p className="card-text">{text}</p>
-          <Button onClick={onSuccess}>Got It</Button>
-          <Button onClick={onPass}>Pass</Button>
+          {children}
         </div>
       </div>
     );
   }
 }
 
-function mapStateToProps(state){
-  let { image, text } = state.currentCard.card;
-
-  let stateProps = {
-    image,
-    text
-  };
-  return stateProps;
-}
-
-const mapDispatchToProps = (dispatch, ownProps) => {
-  return bindActionCreators({
-    onSuccess: succeedCard,
-    onPass: passCard
-  }, dispatch);
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Card);
+export default Card;

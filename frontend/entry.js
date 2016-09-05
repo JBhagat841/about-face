@@ -41,6 +41,10 @@ const history = syncHistoryWithStore(browserHistory, store, {});
 // ========================================================
 const MOUNT_NODE = document.getElementById('root');
 
+// Init the first card
+import { getNewCard } from 'actions';
+store.dispatch(getNewCard());
+
 let render = () => {
   const routes = createRoutes(store);
 
