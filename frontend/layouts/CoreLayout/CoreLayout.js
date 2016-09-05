@@ -2,7 +2,7 @@ import classes from './CoreLayout.scss';
 import 'styles/app.scss';
 
 export const CoreLayout = ({ children }) => (
-  <div className='container'>
+  <div className='container-fluid'>
     <div className={classes.mainContainer}>
       {children}
     </div>

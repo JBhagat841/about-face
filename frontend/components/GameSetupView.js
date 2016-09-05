@@ -11,10 +11,20 @@ class GameSetupView extends Component {
     const { onStartNewGame } = this.props;
 
     return (
-      <div>
-        <h1>New Game - Ready?</h1>
-        <Button onClick={onStartNewGame}>Yes</Button>
-        <Link to="/" className="btn btn-outline-secondary">No</Link>
+      <div className="title-screen">
+        <div className="row">
+          <div className="col-sm-12">
+            <h1>Ready?</h1>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-sm-4">
+            <Button onClick={onStartNewGame} className="btn btn-primary btn-block">Yes</Button>
+          </div>
+          <div className="col-sm-4 offset-sm-8">
+            <Link to="/" className="btn btn-outline-secondary btn-block">No</Link>
+          </div>
+        </div>
       </div>
     )
   }
