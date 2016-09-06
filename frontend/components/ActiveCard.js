@@ -21,7 +21,7 @@ class ActiveCard extends Component {
       <div>
         <div className="successPad" onClick={onSuccess} />
         <div className="passPad" onClick={onPass} />
-        <Card image={image} text={text} />
+        <Card image={image} text={text} className="active-card" />
       </div>
     );
   }

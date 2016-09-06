@@ -9,7 +9,12 @@ class Card extends Component {
   render () {
     const { image, text, result, className, children } = this.props;
 
-    let cardClasses = `card game-card ${className}`;
+    let cardClasses = "card game-card";
+
+    if (className) {
+      cardClasses += ` ${className}`;
+    }
+
     if (result == 'success') {
       cardClasses += ' card-outline-success';
     } else if (result == 'pass') {

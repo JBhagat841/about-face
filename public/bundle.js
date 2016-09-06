@@ -30467,7 +30467,7 @@
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Slabo+27px);", ""]);
 	
 	// module
-	exports.push([module.id, "html {\n  box-sizing: border-box; }\n\nhtml,\nbody {\n  margin: 0;\n  padding: 0;\n  height: 100%; }\n\n*,\n*:before,\n*:after {\n  box-sizing: inherit; }\n\nbody {\n  font-family: 'Slabo 27px', serif;\n  background: #fff; }\n\nh1 {\n  text-align: center;\n  font-size: 4em; }\n\n.title-screen {\n  margin-top: 80px; }\n  .title-screen .btn-bab {\n    font-size: 2.5rem; }\n\n.start-button {\n  font-size: 2em; }\n\n.successPad {\n  background-color: transparent;\n  position: fixed;\n  height: 90vh;\n  width: 50vw;\n  top: 0;\n  left: 0;\n  z-index: 999; }\n\n.passPad {\n  background-color: transparent;\n  position: fixed;\n  height: 90vh;\n  width: 50vw;\n  top: 0;\n  left: 50vw;\n  z-index: 999; }\n\n.game-card {\n  text-align: center; }\n  .game-card img {\n    max-height: 50vh;\n    max-width: 50vw; }\n\n.game-card .card-text {\n  text-align: center;\n  font-size: 3em; }\n", ""]);
+	exports.push([module.id, "html {\n  box-sizing: border-box; }\n\nhtml,\nbody {\n  margin: 0;\n  padding: 0;\n  height: 100%; }\n\n*,\n*:before,\n*:after {\n  box-sizing: inherit; }\n\nbody {\n  font-family: 'Slabo 27px', serif;\n  background: #fff; }\n\nh1 {\n  text-align: center;\n  font-size: 4em; }\n\n.title-screen {\n  margin-top: 80px; }\n  .title-screen .btn-bab {\n    font-size: 2.5rem; }\n\n.start-button {\n  font-size: 2em; }\n\n.countdown {\n  font-size: 2em;\n  position: fixed;\n  top: 2vh;\n  left: 2vw;\n  z-index: 800; }\n\n.successPad {\n  background-color: transparent;\n  position: fixed;\n  height: 90vh;\n  width: 50vw;\n  top: 0;\n  left: 0;\n  z-index: 999; }\n\n.passPad {\n  background-color: transparent;\n  position: fixed;\n  height: 90vh;\n  width: 50vw;\n  top: 0;\n  left: 50vw;\n  z-index: 999; }\n\n.game-card {\n  text-align: center; }\n  .game-card img {\n    max-height: 50vh;\n    max-width: 50vw; }\n\n.game-card .card-text {\n  text-align: center;\n  font-size: 3em; }\n\n.active-card {\n  border: none; }\n", ""]);
 	
 	// exports
 
@@ -40996,6 +40996,10 @@
 	
 	var _ActiveCard2 = _interopRequireDefault(_ActiveCard);
 	
+	var _TimedCountdown = __webpack_require__(315);
+	
+	var _TimedCountdown2 = _interopRequireDefault(_TimedCountdown);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -41019,13 +41023,14 @@
 	      return React.createElement(
 	        'div',
 	        null,
+	        React.createElement(_TimedCountdown2.default, null),
 	        React.createElement(
 	          'div',
 	          { className: 'row' },
 	          React.createElement(
 	            'div',
 	            { className: 'col-sm-12' },
-	            React.createElement(_ActiveCard2.default, { className: 'active-card' })
+	            React.createElement(_ActiveCard2.default, null)
 	          )
 	        ),
 	        React.createElement(
@@ -41111,7 +41116,7 @@
 	        null,
 	        React.createElement('div', { className: 'successPad', onClick: onSuccess }),
 	        React.createElement('div', { className: 'passPad', onClick: onPass }),
-	        React.createElement(_Card2.default, { image: image, text: text })
+	        React.createElement(_Card2.default, { image: image, text: text, className: 'active-card' })
 	      );
 	    }
 	  }]);
@@ -41190,7 +41195,12 @@
 	      var children = _props.children;
 	
 	
-	      var cardClasses = 'card game-card ' + className;
+	      var cardClasses = "card game-card";
+	
+	      if (className) {
+	        cardClasses += ' ' + className;
+	      }
+	
 	      if (result == 'success') {
 	        cardClasses += ' card-outline-success';
 	      } else if (result == 'pass') {
@@ -43646,6 +43656,101 @@
 
 	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["React"] = __webpack_require__(1);
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 314 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React) {"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Countdown = function (_Component) {
+	  _inherits(Countdown, _Component);
+	
+	  function Countdown() {
+	    _classCallCheck(this, Countdown);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Countdown).apply(this, arguments));
+	  }
+	
+	  _createClass(Countdown, [{
+	    key: "render",
+	    value: function render() {
+	      var value = this.props.value;
+	
+	
+	      return React.createElement(
+	        "div",
+	        null,
+	        React.createElement(
+	          "div",
+	          { className: "countdown" },
+	          React.createElement(
+	            "span",
+	            null,
+	            value
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Countdown;
+	}(_react.Component);
+	
+	exports.default = Countdown;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ },
+/* 315 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _redux = __webpack_require__(182);
+	
+	var _reactRedux = __webpack_require__(175);
+	
+	var _Countdown = __webpack_require__(314);
+	
+	var _Countdown2 = _interopRequireDefault(_Countdown);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function mapStateToProps(state) {
+	  var secondsRemaining = state.game.secondsRemaining;
+	
+	
+	  var stateProps = {
+	    value: secondsRemaining
+	  };
+	  return stateProps;
+	}
+	
+	var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
+	  return (0, _redux.bindActionCreators)({}, dispatch);
+	};
+	
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_Countdown2.default);
 
 /***/ }
 /******/ ]);
