@@ -18,11 +18,11 @@ class GameSetupView extends Component {
           </div>
         </div>
         <div className="row">
-          <div className="col-sm-4">
-            <Button onClick={onStartNewGame} className="btn btn-primary btn-block">Yes</Button>
+          <div className="offset-sm-2 col-sm-3">
+            <Button onClick={onStartNewGame} className="btn btn-primary btn-block btn-bab">Yes</Button>
           </div>
-          <div className="col-sm-4 offset-sm-8">
-            <Link to="/" className="btn btn-outline-secondary btn-block">No</Link>
+          <div className="col-sm-3 offset-sm-2">
+            <Link to="/" className="btn btn-outline-info btn-block btn-bab">No</Link>
           </div>
         </div>
       </div>

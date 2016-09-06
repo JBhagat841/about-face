@@ -30467,7 +30467,7 @@
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Slabo+27px);", ""]);
 	
 	// module
-	exports.push([module.id, "html {\n  box-sizing: border-box; }\n\nhtml,\nbody {\n  margin: 0;\n  padding: 0;\n  height: 100%; }\n\n*,\n*:before,\n*:after {\n  box-sizing: inherit; }\n\nbody {\n  font-family: 'Slabo 27px', serif;\n  background: #fff; }\n\nh1 {\n  text-align: center;\n  font-size: 4em; }\n\n.title-screen {\n  margin-top: 80px; }\n\n.start-button {\n  font-size: 2em; }\n\n.game-card {\n  max-width: 300px; }\n\n.game-card .card-text {\n  text-align: center;\n  font-size: 3em; }\n", ""]);
+	exports.push([module.id, "html {\n  box-sizing: border-box; }\n\nhtml,\nbody {\n  margin: 0;\n  padding: 0;\n  height: 100%; }\n\n*,\n*:before,\n*:after {\n  box-sizing: inherit; }\n\nbody {\n  font-family: 'Slabo 27px', serif;\n  background: #fff; }\n\nh1 {\n  text-align: center;\n  font-size: 4em; }\n\n.title-screen {\n  margin-top: 80px; }\n  .title-screen .btn-bab {\n    font-size: 2.5rem; }\n\n.start-button {\n  font-size: 2em; }\n\n.successPad {\n  background-color: transparent;\n  position: fixed;\n  height: 90vh;\n  width: 50vw;\n  top: 0;\n  left: 0;\n  z-index: 999; }\n\n.passPad {\n  background-color: transparent;\n  position: fixed;\n  height: 90vh;\n  width: 50vw;\n  top: 0;\n  left: 50vw;\n  z-index: 999; }\n\n.game-card {\n  text-align: center; }\n  .game-card img {\n    max-height: 50vh;\n    max-width: 50vw; }\n\n.game-card .card-text {\n  text-align: center;\n  font-size: 3em; }\n", ""]);
 	
 	// exports
 
@@ -30679,19 +30679,19 @@
 	          { className: 'row' },
 	          React.createElement(
 	            'div',
-	            { className: 'col-sm-4' },
+	            { className: 'offset-sm-2 col-sm-3' },
 	            React.createElement(
 	              _Button2.default,
-	              { onClick: onStartNewGame, className: 'btn btn-primary btn-block' },
+	              { onClick: onStartNewGame, className: 'btn btn-primary btn-block btn-bab' },
 	              'Yes'
 	            )
 	          ),
 	          React.createElement(
 	            'div',
-	            { className: 'col-sm-4 offset-sm-8' },
+	            { className: 'col-sm-3 offset-sm-2' },
 	            React.createElement(
 	              _reactRouter.Link,
-	              { to: '/', className: 'btn btn-outline-secondary btn-block' },
+	              { to: '/', className: 'btn btn-outline-info btn-block btn-bab' },
 	              'No'
 	            )
 	          )
@@ -30747,11 +30747,14 @@
 	      var _props = this.props;
 	      var children = _props.children;
 	      var _onClick = _props.onClick;
+	      var className = _props.className;
 	
+	
+	      var classes = className ? className : "btn btn-primary";
 	
 	      return React.createElement(
 	        "a",
-	        { className: "btn btn-primary", href: "#",
+	        { className: classes, href: "#",
 	          onClick: function onClick(e) {
 	            e.preventDefault();
 	            _onClick();
@@ -30805,7 +30808,7 @@
 	    var currentCard = _getState.currentCard;
 	
 	
-	    dispatch(completeCard(currentCard.card.image, currentCard.card.text, 'success'));
+	    dispatch(completeCard(currentCard.image, currentCard.text, 'success'));
 	    dispatch(getNewCard());
 	  };
 	};
@@ -30817,7 +30820,7 @@
 	    var currentCard = _getState2.currentCard;
 	
 	
-	    dispatch(completeCard(currentCard.card.image, currentCard.card.text, 'pass'));
+	    dispatch(completeCard(currentCard.image, currentCard.text, 'pass'));
 	    dispatch(getNewCard());
 	  };
 	};
@@ -41016,11 +41019,27 @@
 	      return React.createElement(
 	        'div',
 	        null,
-	        React.createElement(_ActiveCard2.default, null),
 	        React.createElement(
-	          _reactRouter.Link,
-	          { to: 'done', className: 'btn btn-primary' },
-	          'Done'
+	          'div',
+	          { className: 'row' },
+	          React.createElement(
+	            'div',
+	            { className: 'col-sm-12' },
+	            React.createElement(_ActiveCard2.default, { className: 'active-card' })
+	          )
+	        ),
+	        React.createElement(
+	          'div',
+	          { className: 'row' },
+	          React.createElement(
+	            'div',
+	            { className: 'offset-sm-4 col-sm-4' },
+	            React.createElement(
+	              _reactRouter.Link,
+	              { to: 'done', className: 'btn btn-primary btn-block' },
+	              'Done'
+	            )
+	          )
 	        )
 	      );
 	    }
@@ -41088,18 +41107,11 @@
 	
 	
 	      return React.createElement(
-	        _Card2.default,
-	        { image: image, text: text },
-	        React.createElement(
-	          _Button2.default,
-	          { onClick: onSuccess },
-	          'Got It'
-	        ),
-	        React.createElement(
-	          _Button2.default,
-	          { onClick: onPass },
-	          'Pass'
-	        )
+	        'div',
+	        null,
+	        React.createElement('div', { className: 'successPad', onClick: onSuccess }),
+	        React.createElement('div', { className: 'passPad', onClick: onPass }),
+	        React.createElement(_Card2.default, { image: image, text: text })
 	      );
 	    }
 	  }]);
@@ -41116,9 +41128,9 @@
 	
 	
 	function mapStateToProps(state) {
-	  var _state$currentCard$ca = state.currentCard.card;
-	  var image = _state$currentCard$ca.image;
-	  var text = _state$currentCard$ca.text;
+	  var _state$currentCard = state.currentCard;
+	  var image = _state$currentCard.image;
+	  var text = _state$currentCard.text;
 	
 	
 	  var stateProps = {
@@ -41174,10 +41186,11 @@
 	      var image = _props.image;
 	      var text = _props.text;
 	      var result = _props.result;
+	      var className = _props.className;
 	      var children = _props.children;
 	
 	
-	      var cardClasses = "card game-card";
+	      var cardClasses = 'card game-card ' + className;
 	      if (result == 'success') {
 	        cardClasses += ' card-outline-success';
 	      } else if (result == 'pass') {
@@ -41268,25 +41281,37 @@
 	        'div',
 	        null,
 	        React.createElement(
-	          'h1',
-	          null,
-	          'Great Job!'
+	          'div',
+	          { className: 'row' },
+	          React.createElement(
+	            'div',
+	            { className: 'col-sm-12' },
+	            React.createElement(
+	              'h1',
+	              null,
+	              'Great Job!'
+	            ),
+	            React.createElement(
+	              'p',
+	              null,
+	              'You got ',
+	              score,
+	              '!'
+	            ),
+	            React.createElement(
+	              _reactRouter.Link,
+	              { to: '/', className: 'btn btn-outline-primary' },
+	              'Start Over'
+	            )
+	          )
 	        ),
 	        React.createElement(
-	          'p',
-	          null,
-	          'You got ',
-	          score,
-	          '!'
-	        ),
-	        React.createElement(
-	          _reactRouter.Link,
-	          { to: '/', className: 'btn btn-outline-primary' },
-	          'Start Over'
-	        ),
-	        cards.map(function (card, index) {
-	          return React.createElement(_Card2.default, { key: index, image: card.image, text: card.text, result: card.result });
-	        })
+	          'div',
+	          { className: 'row' },
+	          cards.map(function (card, index) {
+	            return React.createElement(_Card2.default, { key: index, image: card.image, text: card.text, result: card.result, className: 'col-sm-4' });
+	          })
+	        )
 	      );
 	    }
 	  }]);
@@ -41632,18 +41657,27 @@
 /* 305 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	var initialState = {};
+	var initialState = {
+	  secondsRemaining: 30
+	};
 	
 	var game = function game() {
 	  var state = arguments.length <= 0 || arguments[0] === undefined ? initialState : arguments[0];
 	  var action = arguments[1];
 	
-	  return state;
+	  switch (action.type) {
+	    case 'TIMER_TICK':
+	      return Object.assign({}, state, {
+	        secondsRemaining: state.secondsRemaining > 0 ? state.secondsRemaining - 1 : 0
+	      });
+	    default:
+	      return state;
+	  }
 	};
 	
 	exports.default = game;
@@ -41692,12 +41726,9 @@
 	  value: true
 	});
 	var initialState = {
-	  secondsRemaining: 30,
-	  card: {
-	    image: "",
-	    text: "",
-	    result: ""
-	  }
+	  image: "",
+	  text: "",
+	  result: ""
 	};
 	
 	var currentCard = function currentCard() {
@@ -41707,19 +41738,12 @@
 	  switch (action.type) {
 	    case 'SET_CURRENT_CARD':
 	      return {
-	        secondsRemaining: 30,
-	        card: {
-	          image: action.image,
-	          text: action.text,
-	          result: action.result
-	        }
+	        image: action.image,
+	        text: action.text,
+	        result: action.result
 	      };
 	    case 'RESET_GAME':
 	      return initialState;
-	    case 'TIMER_TICK':
-	      return Object.assign({}, state, {
-	        secondsRemaining: state.secondsRemaining > 0 ? state.secondsRemaining - 1 : 0
-	      });
 	    default:
 	      return state;
 	  }

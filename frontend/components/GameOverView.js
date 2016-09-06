@@ -12,12 +12,18 @@ class GameOverView extends Component {
 
     return (
       <div>
-        <h1>Great Job!</h1>
-        <p>You got {score}!</p>
-        <Link to="/" className="btn btn-outline-primary">Start Over</Link>
-        {
-          cards.map((card, index) => <Card key={index} image={card.image} text={card.text} result={card.result} />)
-        }
+        <div className="row">
+          <div className="col-sm-12">
+            <h1>Great Job!</h1>
+            <p>You got {score}!</p>
+            <Link to="/" className="btn btn-outline-primary">Start Over</Link>
+          </div>
+        </div>
+        <div className="row">
+          {
+            cards.map((card, index) => <Card key={index} image={card.image} text={card.text} result={card.result} className="col-sm-4" />)
+          }
+        </div>
       </div>
     )
   }

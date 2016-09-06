@@ -18,16 +18,17 @@ class ActiveCard extends Component {
     const { image, text, onSuccess, onPass } = this.props;
 
     return (
-      <Card image={image} text={text}>
-        <Button onClick={onSuccess}>Got It</Button>
-        <Button onClick={onPass}>Pass</Button>
-      </Card>
+      <div>
+        <div className="successPad" onClick={onSuccess} />
+        <div className="passPad" onClick={onPass} />
+        <Card image={image} text={text} />
+      </div>
     );
   }
 }
 
 function mapStateToProps(state){
-  let { image, text } = state.currentCard.card;
+  let { image, text } = state.currentCard;
 
   let stateProps = {
     image,

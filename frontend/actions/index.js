@@ -15,7 +15,7 @@ export const succeedCard = (image, text) => {
   return (dispatch, getState) => {
     const { currentCard } = getState();
 
-    dispatch(completeCard(currentCard.card.image, currentCard.card.text, 'success'));
+    dispatch(completeCard(currentCard.image, currentCard.text, 'success'));
     dispatch(getNewCard());
   }
 }
@@ -24,7 +24,7 @@ export const passCard = (image, text) => {
   return (dispatch, getState) => {
     const { currentCard } = getState();
 
-    dispatch(completeCard(currentCard.card.image, currentCard.card.text, 'pass'));
+    dispatch(completeCard(currentCard.image, currentCard.text, 'pass'));
     dispatch(getNewCard());
   }
 }

@@ -7,10 +7,12 @@ class Button extends Component {
   };
 
   render () {
-    const { children, onClick } = this.props;
+    const { children, onClick, className } = this.props;
+
+    let classes = className ? className : "btn btn-primary";
 
     return (
-      <a className="btn btn-primary" href="#"
+      <a className={classes} href="#"
          onClick={e => {
            e.preventDefault()
            onClick()
